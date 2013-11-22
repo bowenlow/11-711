@@ -21,19 +21,33 @@ def agendaComparator(item1, item2):
       valDiff = value2 - value1
       return 1 if valDiff < 0 else -1      
 
-# Viterbi
+# Viterbii
 # You can omit declaring the semiring except in Sections 2-3
-semiZero = (0, set())
-semiOne = (1, set())
+semiZero = (0, ((),sys.maxint,0), [])
+semiOne = (1, ((),sys.maxint,0), [])
 def semiPlus(a, b):
-  
-  return max(a,b)
+  (rw1, lhs1, bp1) = a
+  (rw2, lhs2, bp2) = b
+  rw3 = max(rw1,rw2)
+  if (rw1 < rw2):
+    return (rw3, lhs2, bp2)
+  else:
+    return (rw3, lhs1, bp1)
 def semiTimes(a, b):
-  
-  return a * b
+  (rw1, lhs1, bp1) = a
+  (rw2, lhs2, bp2) = b
+  (w1, sp1, ep1) = lhs1
+  (w2, sp2, ep2) = lhs2
+  rw3 = rw1 * rw2
+  lhs3 = (w1, min(sp1,sp2), max(ep1,ep2))
+  bp3 = bp1 + bp2
+  return (rw3, lhs3, bp3)
 def A(word, startPos, endPos, sOne): return (word, startPos, endPos)
 def R(ruleLhs, ruleRhs, ruleWeight):
-  return (ruleWeight, ruleLhs, list(ruleRhs))
+  return (ruleWeight, (ruleLhs, sys.maxint, 0), [])
+
+def backtrace():
+  return False
 
 # You can omit declaring prune() except in Section 5
 def prune(item):
