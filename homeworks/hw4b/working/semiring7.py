@@ -42,16 +42,9 @@ def semiTimes(a, b):
   lhs3 = (w1, min(sp1,sp2), max(ep1,ep2))
   bp3 = bp1 + [lhs2]
   return (rw3, lhs3, bp3)
-def A(word, startPos, endPos, sOne): return (sOne, (word, startPos, endPos) , [])
+def A(word, startPos, endPos, sOne): 
+  return (1, (word, startPos, endPos) , [])
 def R(ruleLhs, ruleRhs, ruleWeight): 
-  #min_start = sys.maxint;
-  #max_end = 0;
-  #for r in ruleRhs:
- #   print (r)
-  #  (w, sp, ep) = r
-  #  min_start = min(sp, min_start)
-  #  max_end = max(ep, max_end)
-  #return (ruleWeight, (ruleLhs, min_start, max_end), [])
   return (ruleWeight, (ruleLhs, sys.maxint, 0), [])
 
 def backtrace(chart, lhs, startPos, endPos,i):
@@ -75,7 +68,7 @@ for (i, sent) in enumerate(sys.stdin):
     # (e.g. always omit the logging options such as dump in your solutions)
     (goalValue, chart, stats) = parse(sent, rules,
                                       #agendaCmp=agendaComparator,
-                                      sZero=semiZero, sOne=semiOne, sPlus=semiPlus, sTimes=semiTimes, R=R,
+                                      sZero=semiZero, sOne=semiOne, sPlus=semiPlus, sTimes=semiTimes, R=R,A=A,
                                       pruner=prune,
                                       dumpAgenda=False, dumpChart=False, logConsidering=False)
     print "SENT {0} AGENDA ADDS: {1}".format(i, stats['agendaAdds'])
