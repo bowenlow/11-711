@@ -21,52 +21,22 @@ def agendaComparator(item1, item2):
       valDiff = value2 - value1
       return 1 if valDiff < 0 else -1      
 
-# Viterbii
+# Viterbi
 # You can omit declaring the semiring except in Sections 2-3
-semiZero = (0, ('',sys.maxint,0), [])
-semiOne = (1, ('',sys.maxint,0), [])
-def semiPlus(a, b):
-  (rw1, lhs1, bp1) = a
-  (rw2, lhs2, bp2) = b
-  rw3 = max(rw1,rw2)
-  if (rw1 < rw2):
-    return (rw3, lhs2, bp2)
-  else:
-    return (rw3, lhs1, bp1)
-def semiTimes(a, b):
-  (rw1, lhs1, bp1) = a
-  (rw2, lhs2, bp2) = b
-  (w1, sp1, ep1) = lhs1
-  (w2, sp2, ep2) = lhs2
-  rw3 = rw1 * rw2
-  lhs3 = (w1, min(sp1,sp2), max(ep1,ep2))
-  bp3 = bp1 + [lhs2]
-  return (rw3, lhs3, bp3)
-def A(word, startPos, endPos, sOne): return (sOne, (word, startPos, endPos) , [])
-def R(ruleLhs, ruleRhs, ruleWeight): 
-  #min_start = sys.maxint;
-  #max_end = 0;
-  #for r in ruleRhs:
- #   print (r)
-  #  (w, sp, ep) = r
-  #  min_start = min(sp, min_start)
-  #  max_end = max(ep, max_end)
-  #return (ruleWeight, (ruleLhs, min_start, max_end), [])
-  return (ruleWeight, (ruleLhs, sys.maxint, 0), [])
-
-def backtrace(chart, lhs, startPos, endPos,i):
-  sys.stdout.write('(' + str(lhs) + ' ');
-  prevRule = chart[lhs][(startPos, endPos)]
-  (rw, lhs, bplist) = prevRule
-  for bp in bplist:
-    (rwb, lhsb, bplistb) = bp
-    (w, sp, ep) = lhsb
-    backtrace(chart, lhsb, sp, ep)
-  sys.stdout.write(')\n')
+semiZero = 0
+semiOne = 1
+def semiPlus(a, b): return max(a,b)
+def semiTimes(a, b): return a * b
+#def A(word, startPos, endPos, sOne): return sOne
+def R(ruleLhs, ruleRhs, ruleWeight): return ruleWeight
 
 # You can omit declaring prune() except in Section 5
 def prune(item):
-  return False
+  (i, j, w, val) = item
+  if (val < 1 * (10 ** -12)):
+    return True
+  else:
+    return False
 
 for (i, sent) in enumerate(sys.stdin):
     sent = sent.strip().split()
@@ -74,14 +44,9 @@ for (i, sent) in enumerate(sys.stdin):
     # (e.g. leave out agendaCmp except in Section 1)
     # (e.g. always omit the logging options such as dump in your solutions)
     (goalValue, chart, stats) = parse(sent, rules,
-                                      #agendaCmp=agendaComparator,
+                                      agendaCmp=agendaComparator,
                                       sZero=semiZero, sOne=semiOne, sPlus=semiPlus, sTimes=semiTimes, R=R,
                                       pruner=prune,
                                       dumpAgenda=False, dumpChart=False, logConsidering=False)
     print "SENT {0} AGENDA ADDS: {1}".format(i, stats['agendaAdds'])
     print "SENT {0} GOAL SCORE: {1}".format(i, goalValue)
-    (rw, lhs, bplist) = goalValue;
-    sys.stdout.write('SENT ' + str(i) + ' GOAL DERIVATIONS: ');
-    (w, sp, ep) = lhs
-    backtrace(chart, lhs, sp, ep, i );
-    
