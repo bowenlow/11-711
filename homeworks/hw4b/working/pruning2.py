@@ -33,7 +33,7 @@ def R(ruleLhs, ruleRhs, ruleWeight): return ruleWeight
 # You can omit declaring prune() except in Section 5
 def prune(item):
   (i, j, w, val) = item
-  no_of_rules = j - i;
+  no_of_rules = 2 * (j - i) - 1;
   if val < 0.01725 ** no_of_rules:
     return True
   else:

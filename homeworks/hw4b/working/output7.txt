@@ -1,9 +1,12 @@
 SENT 0 AGENDA ADDS: 31
-SENT 0 GOAL SCORE: (2.2800602889147383e-06, ('[S]', 0, 5), [('[NP-SBJ]', 0, 2), ('[X49]', 2, 5)])
-SENT 0 GOAL DERIVATIONS: (('[S]', 0, 5) )
+SENT 0 GOAL SCORE: 2.28006028891e-06
+SENT 0 GOAL BACKPOINTERS: [('[NP-SBJ]', 0, 2), ('[X49]', 2, 5)]
+SENT 0 GOAL DERIVATIONS: ([S] ([NP-SBJ] ([NNP] Ms.)([NNP] Haag))([X49] ([VP] ([VBZ] plays)([NP] ([NNP] Elianti)))([.] .)))
 SENT 1 AGENDA ADDS: 54
-SENT 1 GOAL SCORE: (5.738246701258166e-09, ('[S]', 0, 9), [('[NP-SBJ]', 0, 3), ('[X49]', 3, 9)])
-SENT 1 GOAL DERIVATIONS: (('[S]', 0, 9) )
+SENT 1 GOAL SCORE: 5.73824670126e-09
+SENT 1 GOAL BACKPOINTERS: [('[NP-SBJ]', 0, 3), ('[X49]', 3, 9)]
+SENT 1 GOAL DERIVATIONS: ([S] ([NP-SBJ] ([DT] The)([X7] ([JJ] new)([NN] rate)))([X49] ([VP] ([MD] will)([VP] ([VB] be)([ADJP-PRD] ([JJ] payable)([NP-TMP] ([NNP] Feb.)([CD] 15)))))([.] .)))
 SENT 2 AGENDA ADDS: 49
-SENT 2 GOAL SCORE: (1.2592439568239367e-08, ('[S]', 0, 8), [('[NP-SBJ-1]', 0, 3), ('[X47]', 3, 8)])
-SENT 2 GOAL DERIVATIONS: (('[S]', 0, 8) )
+SENT 2 GOAL SCORE: 1.25924395682e-08
+SENT 2 GOAL BACKPOINTERS: [('[NP-SBJ-1]', 0, 3), ('[X47]', 3, 8)]
+SENT 2 GOAL DERIVATIONS: ([S] ([NP-SBJ-1] ([DT] A)([X4] ([NN] record)([NN] date)))([X47] ([VP] ([VBZ] has)([X67] ([RB] n't)([VP] ([VBN] been)([VP] ([VBN] set)))))([.] .)))

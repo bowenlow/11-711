@@ -47,15 +47,20 @@ def A(word, startPos, endPos, sOne):
 def R(ruleLhs, ruleRhs, ruleWeight): 
   return (ruleWeight, (ruleLhs, sys.maxint, 0), [])
 
-def backtrace(chart, lhs, startPos, endPos,i):
-  sys.stdout.write('(' + str(lhs) + ' ');
-  prevRule = chart[lhs][(startPos, endPos)]
-  (rw, lhs, bplist) = prevRule
-  for bp in bplist:
-    (rwb, lhsb, bplistb) = bp
-    (w, sp, ep) = lhsb
-    backtrace(chart, lhsb, sp, ep)
-  sys.stdout.write(')\n')
+def backtrace(chart, goalValue):
+  (rw, lhs, bplist) = goalValue
+  (w, sp, ep) = lhs
+  if len(bplist) >= 1:
+    sys.stdout.write('(' + w + ' ')
+    for bp in range(len(bplist)):
+      (bpw, bpsp, bpep) = bplist[bp]
+      child_goalValue = chart[bpw][(bpsp, bpep)]
+      backtrace(chart, child_goalValue)
+    sys.stdout.write(')') 
+  else:
+    sys.stdout.write(w)
+    return
+
 
 # You can omit declaring prune() except in Section 5
 def prune(item):
@@ -72,9 +77,7 @@ for (i, sent) in enumerate(sys.stdin):
                                       pruner=prune,
                                       dumpAgenda=False, dumpChart=False, logConsidering=False)
     print "SENT {0} AGENDA ADDS: {1}".format(i, stats['agendaAdds'])
-    print "SENT {0} GOAL SCORE: {1}".format(i, goalValue)
-    (rw, lhs, bplist) = goalValue;
+    print "SENT {0} GOAL SCORE: {1}".format(i, goalValue[0])
+    print "SENT {0} GOAL BACKPOINTERS: {1}".format(i, goalValue[2])
     sys.stdout.write('SENT ' + str(i) + ' GOAL DERIVATIONS: ');
-    (w, sp, ep) = lhs
-    backtrace(chart, lhs, sp, ep, i );
-    
+    backtrace(chart, goalValue); print;
