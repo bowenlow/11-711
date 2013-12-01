@@ -1,0 +1,213 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{color}
+\newcommand{\sol}[1]{\textcolor{blue}{\textsc{Solution:}\\#1}}
+
+\begin{document}
+
+\title{{\bf 11-711: Algorithms for NLP}\\
+       Homework Assignment \#5
+}
+
+\author{}
+\date{Out: November 19, 2013\\
+      Due: December 5, 2013}
+\maketitle
+
+\section*{Problem 1}
+
+Consider the following context-free grammar fragment that has been augmented with feature structures:
+
+\begin{verbatim}
+(1) VP --> v NP
+        <v subcat> = +np
+        <VP obj> = NP
+        VP = v
+
+(2) VP --> v NP PP
+        <v subcat> = +np+pp:loc
+        <VP obj> = NP
+        <VP comp> = PP
+        VP = v
+\end{verbatim}
+
+Assume the following feature structures have already been created for the {\tt v}, {\tt NP}, and {\tt PP} parse 5odes:
+
+\begin{verbatim}
+v: [ [root left] [subcat +np+pp:loc] ]
+
+NP: [ [root flowers] [det +] [agr 3s] ]
+
+PP: [ [root garden] [prep in] ]
+\end{verbatim}
+
+The parser is now applying the unification constraints in Rule (2) above and is creating the left-hand-side {\tt VP} constituent.  Answer the following questions using the feature structure and DAG notation presented in class: \url{http://demo.clab.cs.cmu.edu/fa2013-11711/images/e/eb/Unification.pdf}.  Specifically, from slide 9:
+
+\centerline{\includegraphics[scale=0.15]{dag.png}}
+
+While you are not required to typeset graph-like figures such as these, all of your text and drawings must be very clear; illegible or otherwise ambiguous solutions will not receive credit.
+
+\begin{enumerate}
+
+\item {\bf [15 points]} Convert the feature structures into DAG representations, execute the unification constraints in the rule, and show the resulting feature structures of all parse nodes after performing the unifications as specified in the rule.  If the unification fails at any point, clearly indicate the constraint being violated.
+
+\item {\bf [15 points]} Now assume we are applying Rule (1) rather than Rule (2), using the original feature structures of the {\tt v} and {\tt NP} nodes.  Again, convert the feature structures into DAG representations, execute the unification constraints in the rule, and show the resulting feature structures of all parse nodes after performing the unifications as specified in the rule.  If the unification fails at any point, clearly indicate the constraint being violated.
+
+\item {\bf [10 points]} Explain briefly how the unification constraints in the rules above can be used to disambiguate sentences such as ``{\tt I left the flowers in the garden}''.
+
+\end{enumerate}
+
+
+\clearpage
+\section*{Problem 2}
+
+\subsection*{2.1 CCG Syntactic Analysis [20 points]}
+\label{ss:ccg}
+
+\noindent{}Basic CCG rules:
+\newline
+
+\noindent\begin{tabular}{ll}
+Forward application: & \texttt{A/B + B = A} \\
+Backward application: & \texttt{B + A\textbackslash{}B = A} \\
+Composition: & \texttt{A/B + B/C = A/C} \\
+Conjunction: & \texttt{A CONJ A' = A''} \\
+Type raising: & \texttt{A = X/(X\textbackslash{}A)} \\
+\newline
+\end{tabular}
+
+\noindent{}Lexical entries:
+
+\begin{verbatim}
+Alan NP
+Bob NP
+Jill NP
+John NP
+Mary NP
+chocolates NP
+flowers NP
+slides N
+some NP/N
+dislikes (S\NP)/NP
+like (S\NP)/NP
+likes (S\NP)/NP
+gave (S\NP)/NP/NP
+and CONJ
+but CONJ
+\end{verbatim}
+
+\noindent{}Show syntacic analysis of the following sentences using the above rules and lexical entries.  Use the notation shown in class: \url{http://demo.clab.cs.cmu.edu/fa2013-11711/images/8/8b/CCG.pdf}.  You do not need to show the type of each rule used (forward, backward, etc.), but you should clearly show each step of your analysis as in the class notes.
+
+When typesetting your solutions, make sure to use a fixed-width font so that your dashed lines are properly aligned with the text of the sentence. Use sufficient spacing to ensure that your solutions are entirely unambiguous. In Latex, you can use the verbatim environment (see the source of this document). In Microsoft Word, use a font such as Courier. For example:
+
+\begin{verbatim}
+John  likes       Mary
+NP    (S\NP)/NP)  NP
+      --------------
+           S\NP
+---------------
+      S
+\end{verbatim}
+
+\noindent Sentences to analyze:
+
+\begin{enumerate}
+\item John and Mary like Bob
+\item Alan gave Bob some slides
+\item John likes Mary but Mary dislikes John
+\item John gave Mary flowers and Jill chocolates
+\item Mary gave Bob and John chocolates and Jill flowers
+\end{enumerate}
+
+
+\subsection*{2.2 CCG Semantic Analysis [20 points]}
+\label{ss:ccgsem}
+
+\noindent{}CCG semantic rules:
+\newline
+
+\noindent\begin{tabular}{ll}
+Forward application: & \texttt{A/B:S + B:T = A:S.T} \\
+Backward application: & \texttt{B:T + A\textbackslash{}B:S = A:S.T} \\
+Coordination: & \texttt{X:A CONJ X':A' = X'': $\lambda$S (A.S \& A'.S)} \\
+Composition: & \texttt{X/Y:A Y/Z:B = X/Z: $\lambda$Q ( A.(B.Q) )} \\
+Type raising: & \texttt{NP:a = T/(T\textbackslash{}NP): $\lambda$R (R.a)} \\
+\newline
+\end{tabular}
+
+\noindent{}Semantically annotated lexical entries:
+\texttt{
+\begin{tabbing}
+Alan NP:a\\
+Bob NP:b\\
+John NP:j\\
+Mary NP:m\\
+exam N:e\\
+slides N:s\\
+some NP/N: $\lambda$X some(X)\\
+the NP/N: $\lambda$X the(X)\\
+walks S\textbackslash{}NP: $\lambda$X walks(X)\\
+grades (S\textbackslash{}NP)/NP: $\lambda$Y $\lambda$X grades(X,Y)\\
+like (S\textbackslash{}NP)/NP: $\lambda$Y $\lambda$X like(X,Y)\\
+likes (S\textbackslash{}NP)/NP: $\lambda$Y $\lambda$X likes(X,Y)\\
+dislikes (S\textbackslash{}NP)/NP: $\lambda$Y $\lambda$X dislikes(X,Y)\\
+gave (S\textbackslash{}NP)/NP/NP: $\lambda$Z $\lambda$Y $\lambda$X gave(X,Y,Z)\\
+and CONJ\\
+but CONJ\\
+\end{tabbing}
+}
+
+\noindent{}Show syntactic and semantic analysis of the following sentences using the above rules and lexical entries.  Clearly show each step of your analysis. Your solution should resemble the following example:
+
+\begin{verbatim}
+John  likes                                  Mary
+NP:j  (S\NP)/NP):lambdaY.lambdaX.likes(X,Y)  NP:m
+      -------------------------------------------
+                S\NP:lambdaX.likes(X,m)
+---------------------------------------
+            S:likes(j,m)
+\end{verbatim}
+
+\begin{enumerate}
+\item Bob grades the exam
+\item Alan gave Bob some slides
+\item John and Mary like Bob
+\item John likes Mary but Mary dislikes John and likes Bob
+\end{enumerate}
+
+
+\subsection*{2.3 Categorical Unification Grammar [20 points]}
+\label{ss:ccguni}
+
+\noindent{}Vocabulary:
+\begin{verbatim}
+boy
+boys
+he
+I
+like
+likes
+movie
+movies
+the
+walk
+walked
+walks
+you
+\end{verbatim}
+
+\noindent{}Adding appropriate syntactic features to the basic S, N, and NP categories, show how the following could be parsed using a categorial framework.  For each sentence, show your lexical entries and the syntactic analysis.  See CCG slides 18--28 for examples of what we're looking for.  No semantic analysis is required for these examples.  Your features should clearly ensure that only grammatically correct sentences parse for the given vocabulary.  Note that the vocabulary is \textbf{not} sorted by category.  Assigning categories is part of your task.  See the class slides for notation and examples.
+
+\begin{enumerate}
+\item I walk
+\item you walk
+\item he walks
+\item he walked
+\item the boy likes the movie
+\item the boys like the movies
+\end{enumerate}
+
+
+\end{document}

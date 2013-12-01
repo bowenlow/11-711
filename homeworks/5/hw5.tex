@@ -1,0 +1,245 @@
+\documentclass{article}
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{extramarks}
+\usepackage{chngpage}
+\usepackage{soul,color}
+\usepackage{graphicx,float,wrapfig}
+\newcommand{\Class}{Algorithm for NLP}
+\newcommand{\ClassInstructor}{Dr. Alon Lavie, Dr. Noah Smith and Dr. Bob Frederking}
+
+% Homework Specific Information. Change it to your own
+\newcommand{\Title}{Homework 5}
+\newcommand{\DueDate}{Dec 5, 2013}
+\newcommand{\StudentName}{Bowen Low}
+\newcommand{\AndrewID}{blow}
+
+% In case you need to adjust margins:
+\topmargin=-0.45in      %
+\evensidemargin=0in     %
+\oddsidemargin=0in      %
+\textwidth=6.5in        %
+\textheight=9.0in       %
+\headsep=0.25in         %
+
+% Setup the header and footer
+\pagestyle{fancy}                                                       %
+\lhead{\StudentName}                                                 %
+\chead{\Title}  %
+\rhead{\firstxmark}                                                     %
+\lfoot{\lastxmark}                                                      %
+\cfoot{}                                                                %
+\rfoot{Page\ \thepage\ of\ \protect\pageref{LastPage}}                          %
+\renewcommand\headrulewidth{0.4pt}                                      %
+\renewcommand\footrulewidth{0.4pt}                                      %
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Some tools
+\newcommand{\enterProblemHeader}[1]{\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak%
+                                    \nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak}%
+\newcommand{\exitProblemHeader}[1]{\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak%
+                                   \nobreak\extramarks{#1}{}\nobreak}%
+
+\newcommand{\homeworkProblemName}{}%
+\newcounter{homeworkProblemCounter}%
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]%
+  {\stepcounter{homeworkProblemCounter}%
+   \renewcommand{\homeworkProblemName}{#1}%
+   \section*{\homeworkProblemName}%
+   \enterProblemHeader{\homeworkProblemName}}%
+  {\exitProblemHeader{\homeworkProblemName}}%
+
+\newcommand{\homeworkSectionName}{}%
+\newlength{\homeworkSectionLabelLength}{}%
+\newenvironment{homeworkSection}[1]%
+  {% We put this space here to make sure we're not connected to the above.
+
+   \renewcommand{\homeworkSectionName}{#1}%
+   \settowidth{\homeworkSectionLabelLength}{\homeworkSectionName}%
+   \addtolength{\homeworkSectionLabelLength}{0.25in}%
+   \changetext{}{-\homeworkSectionLabelLength}{}{}{}%
+   \subsection*{\homeworkSectionName}%
+   \enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]}}%
+  {\enterProblemHeader{\homeworkProblemName}%
+
+   % We put the blank space above in order to make sure this margin
+   % change doesn't happen too soon.
+   \changetext{}{+\homeworkSectionLabelLength}{}{}{}}%
+
+\newcommand{\Answer}{\ \\\textbf{Answer:} }
+\newcommand{\Acknowledgement}[1]{\ \\{\bf Acknowledgement:} #1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Make title
+\title{\textmd{\bf \Class: \Title}\\{\large Instructed by \textit{\ClassInstructor}}\\\normalsize\vspace{0.1in}\small{Due\ on\ \DueDate}}
+\date{}
+\author{\textbf{\StudentName}\ \ \AndrewID}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\begin{spacing}{1.1}
+\maketitle \thispagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Begin edit from here
+
+\begin{homeworkProblem}[]
+\Answer 
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[]
+\Answer 
+\begin{enumerate}
+\item{2.1 CCG Syntactic analysis} \\ 
+  \begin{enumerate}
+  \item{}
+  \begin{verbatim}
+  John and   Mary like       Bob
+  NP   CONJ  NP   (S\NP)/NP  NP
+  -------------- CONJ
+        NP
+                  -------------FA
+                  S\NP
+       --------------- BA
+              S
+  \end{verbatim}
+  \item{}
+  \begin{verbatim}
+  Alan gave         Bob some  slides
+  NP   (S\NP)/NP/NP NP  NP/N  N
+                        --------FA
+                        NP
+       ---------------FA
+          (S\NP)/NP
+       --------------------FA
+           S\NP
+  -------------BA
+        S
+  \end{verbatim}
+  \item{}
+  \begin{verbatim}
+  John likes      Mary but   Mary dislikes      John
+  NP   (S\NP)/NP  NP   CONJ  NP   (S\NP)/NP/NP  NP
+       -------------FA            ----------------FA
+           (S\NP)                       (S\NP)
+  ---------------BA          -----------------BA
+         S                            S
+         ------------------------------CONJ
+                        S
+  \end{verbatim}
+  \item{}
+  \item{}
+  \end{enumerate}
+\item{2.2 CCG Semantic Analysis} \\
+  \begin{enumerate}
+  \item{}
+  \begin{verbatim}
+  Bob grades                                   the                 exam
+  NP:b  (S\NP)/NP:lambdaY.lambdaX.grades(X,Y)  NP/N:lambdaX.the(X) N:e
+                                               -----------------------FA
+                                                     NP:the(e)
+        ------------------------------------------------------FA
+                         (S\NP):lambdaX.grades(X,the(e))
+  ------------------------------------------------------BA
+                           S:grades(b, the(e))
+  \end{verbatim}
+  \item{}
+  \begin{verbatim}
+  Alan gave                                              Bob   some                  slides
+  NP:a (S\NP)/NP/NP:lambdaZ.lambdaY.lambdaX.gave(X,Y,Z)  NP:b  NP/N:lambdaX.some(X)  N:s
+                                                               -------------------------FA
+                                                               NP:some(s)
+       ------------------------------------------------------FA
+           (S\NP)/NP:lambdaY.lambdaX.gave(X,Y,b)
+           --------------------------------------------------------------FA
+                       S\NP: lambdaX.gave(X,some(s),b)
+  -----------------------------------------------BA
+               S:gave(a,some(s),b)
+
+  \end{verbatim}
+  \item{}
+  \begin{verbatim}
+  John and   Mary  like                                 Bob
+  NP:j CONJ  NP:m  (S\NP)/NP:lambdaY.lambdaX.like(X,Y)  NP:b
+  --------------- CONJ
+   NP:lambdaS.(j.S & m.S) 
+                   ------------------------------------------FA
+                         S\NP:lambdaX.like(X,b)
+   --------------------------------------------BA
+        S: (like(j,b) & like(m,b))
+  \end{verbatim}
+  \item{}
+  lambda is written as l here.
+  \begin{verbatim}
+  John likes                      Mary but  Mary dislikes                       John  and 
+  NP:j (S\NP)/NP:lY.lX.likes(X,Y) NP:m CONJ NP:m (S\NP)/NP:lY.lX.dislikes(X,Y)  NP:j  CONJ
+                                                 -----------------------------------FA
+                                                 (S\NP):lX.dislikes(X,j)
+  likes                         Bob
+  (S\NP)/NP:lY.lX.likes(X,Y)    NP:b
+  ----------------------------------FA
+  (S\NP):lX.likes(X,b)
+
+
+
+  NP:j (S\NP):lY.lX.likes(X,Y) NP:m CONJ 
+  NP:m  (S\NP):lX.dislikes(X,j) CONJ (S\NP):lX.likes(X,b)
+        -------------------------------------------------FA
+        (S\NP):lS.(lX.dislikes(X,j).S & lX.likes(X,b).S)
+  -----------------------------------------------------BA
+  S:(dislikes(m,j) & likes(m,b))
+
+
+
+  NP:j (S\NP):lY.lX.likes(X,Y) NP:m CONJ S:(dislikes(m,j) & likes(m,b))
+       -----------------------------FA
+       S\NP:lX.likes(X,m)
+  -----------------------BA
+     S: likes(j,m)
+     -------------------------------------------------------------------CONJ
+               S:lS.(likes(j.m).S & (dislikes(m,j) & likes(m,b)).S)
+                  S: (likes(j.m) & (dislikes(m,j) & likes(m,b)))
+  \end{verbatim}
+  \end{enumerate}
+\item{2.3 Categorical Unification Grammar} \\
+\begin{verbatim}
+he    : [cat:np num:sg] 
+I     : [cat:np num:pl]
+you   : [cat:np num:pl]
+like  : ([cat:s]\[cat:np num:pl])/[cat:np]
+likes : ([cat:s]\[cat:np num:sg])/[cat:np]
+walk  : [cat:s]/[cat:np num:pl]
+walks : [cat:s]/[cat:np num:sg]
+walked: [cat:s]/[cat:np num:!X]
+movie : [cat:n num:sg]
+movies: [cat:n num:pl]
+boy   : [cat:n num:sg]
+boys  : [cat:n num:pl]
+the   : [cat:np num:!X]/[cat:n num:!X]
+\end{verbatim}
+  \begin{enumerate}
+  \item{}
+  \item{}
+  \item{}
+  \item{}
+  \item{}
+  \item{}
+  \end{enumerate}
+\end{enumerate}
+\end{homeworkProblem}
+
+
+\Acknowledgement{}
+
+% End edit to here
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{spacing}
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
