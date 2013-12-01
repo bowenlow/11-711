@@ -1,0 +1,229 @@
+\documentclass{article}
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{extramarks}
+\usepackage{chngpage}
+\usepackage{soul,color}
+\usepackage{graphicx,float,wrapfig}
+\newcommand{\Class}{Algorithm for NLP}
+\newcommand{\ClassInstructor}{Dr. Alon Lavie, Dr. Noah Smith and Dr. Bob Frederking}
+
+% Homework Specific Information. Change it to your own
+\newcommand{\Title}{Homework 4b}
+\newcommand{\DueDate}{November 24, 2013}
+\newcommand{\StudentName}{Bowen Low}
+\newcommand{\AndrewID}{blow}
+
+% In case you need to adjust margins:
+\topmargin=-0.45in      %
+\evensidemargin=0in     %
+\oddsidemargin=0in      %
+\textwidth=6.5in        %
+\textheight=9.0in       %
+\headsep=0.25in         %
+
+% Setup the header and footer
+\pagestyle{fancy}                                                       %
+\lhead{\StudentName}                                                 %
+\chead{\Title}  %
+\rhead{\firstxmark}                                                     %
+\lfoot{\lastxmark}                                                      %
+\cfoot{}                                                                %
+\rfoot{Page\ \thepage\ of\ \protect\pageref{LastPage}}                          %
+\renewcommand\headrulewidth{0.4pt}                                      %
+\renewcommand\footrulewidth{0.4pt}                                      %
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Some tools
+\newcommand{\enterProblemHeader}[1]{\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak%
+                                    \nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak}%
+\newcommand{\exitProblemHeader}[1]{\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak%
+                                   \nobreak\extramarks{#1}{}\nobreak}%
+
+\newcommand{\homeworkProblemName}{}%
+\newcounter{homeworkProblemCounter}%
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]%
+  {\stepcounter{homeworkProblemCounter}%
+   \renewcommand{\homeworkProblemName}{#1}%
+   \section*{\homeworkProblemName}%
+   \enterProblemHeader{\homeworkProblemName}}%
+  {\exitProblemHeader{\homeworkProblemName}}%
+
+\newcommand{\homeworkSectionName}{}%
+\newlength{\homeworkSectionLabelLength}{}%
+\newenvironment{homeworkSection}[1]%
+  {% We put this space here to make sure we're not connected to the above.
+
+   \renewcommand{\homeworkSectionName}{#1}%
+   \settowidth{\homeworkSectionLabelLength}{\homeworkSectionName}%
+   \addtolength{\homeworkSectionLabelLength}{0.25in}%
+   \changetext{}{-\homeworkSectionLabelLength}{}{}{}%
+   \subsection*{\homeworkSectionName}%
+   \enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]}}%
+  {\enterProblemHeader{\homeworkProblemName}%
+
+   % We put the blank space above in order to make sure this margin
+   % change doesn't happen too soon.
+   \changetext{}{+\homeworkSectionLabelLength}{}{}{}}%
+
+\newcommand{\Answer}{\ \\\textbf{Answer:} }
+\newcommand{\Acknowledgement}[1]{\ \\{\bf Acknowledgement:} #1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Make title
+\title{\textmd{\bf \Class: \Title}\\{\large Instructed by \textit{\ClassInstructor}}\\\normalsize\vspace{0.1in}\small{Due\ on\ \DueDate}}
+\date{}
+\author{\textbf{\StudentName}\ \ \AndrewID}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\begin{spacing}{1.1}
+\maketitle \thispagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Begin edit from here
+
+\begin{homeworkProblem}[Derivation Semirings]
+\Answer 
+\begin{itemize}
+\item{Semiring 4} \\
+0: It is a 2-tuple with the integer 0 in the first position and an empty set in the second position. \\
+1: It is a 2-tuple with the integer 1 in the first position and an empty set in the second position. \\
+SemiPlus: It performs the union between 2 2-tuples.  \\
+SemiTimes: It performs the union between 2 2-tuples. \\
+Space: There could be $XL^2R$  \\
+\item{Semiring 5} \\
+0: It is a 3-tuple with the integer 0 in the first position, and a empty tuple in the second 
+position and an empty string in the third position. \\
+1: It is a 3-tuple with the integer 1 in the first position, and empty tuple in the second 
+position and an empty string in the third position. \\
+SemiPlus: Given 2 3-tuples, it checks which has the higher value in the 1st position. It will
+return the 3-tuple with the higher value in the 1st position. \\
+SemiTimes: Given 2 3-tuples $a$ and $b$, it will return a 3-tuple where the first value is the 
+result of mutiplying the numerical value of both 3-tuples. The tuple returned is the tuple
+of $a$ less the first item. The string returned is the concatenation of the string from $a$ to the
+string from $b$. If the string from $b$ is from the right child, then parentheses are added around
+the string. \\
+Space: $O(XL^3(N+W))$ \\ 
+Time: $O(X^3*L^3)$. \\
+\item{Semiring 6} \\
+0: It is an array, containing a single semiZero from SemiRing 5. \\
+1: It is an array, containing a single semiOne from SemiRing 5. \\
+SemiPlus: Given 2 arrays $a$ and $b$, it performs a concatenation of the two arrays, then it 
+sorts the new array by the numerical values in each 3-tuple and retains the top 10. It then
+returns the array of 10 items. \\
+SemiTimes: Given 2 arrays $a$ and $b$, for each element in $a$, it performs the semiTimes of 
+Semiring 5 for every element in $b$. Then given the new array containing all resulting 3-tuples,
+it sorts the new array by the numerical values in each 3-tuple and retains the top 10. It then
+returns the array of 10 items.  \\
+Space: $O(L^2K)$. 
+\item{Semiring 7} \\
+0: It is a 3-tuple, with the integer 0 in the first position, a 3-tuple in the 2nd position, and 
+an empty array in the third position. As for the 3-tuple in the 2nd position, it has an empty 
+string in the first position, integer max in the 2nd and 0 in the third. This represents the 
+word for a given span. The 2nd integer represents the start position and the 3rd integer 
+represents the end position. \\
+1: It is a 3-tuple, with the integer 1 in the first position, a 3-tuple in the 2nd position and 
+an empty array in the third position. As for the 3-tuple in the 2nd position, it has an empty
+string in the first position, integer max in the 2nd and 0 in the third position. This 
+represents the word for a given span. The 2nd integer represents the start position and the 
+3rd position \\
+SemiPlus: Given 2 3-tuples $a$ and $b$, it returns the 3-tuple with the higher weight value 
+in the first position. \\
+SemiTimes: Given 2 3-tuples $a$ and $b$, it returns the 3-tuple where the the 1st position 
+stores the multiplicative result of the numerical values in $a$ and $b$. The array in the 3rd
+position stores the result after appending the word in $b$ to the array in $a$. The word in the 
+new 3-tuple stores the word from $a$, the minimum of the two start positions and the maximum of
+the two end positions.  \\
+Space: $O(XL^2)$
+\end{itemize}
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[Reverse CNF Transformation]
+\Answer 
+No transforming the parse trees is sufficient. As the transformation of the Grammar to CNF is 
+a deterministic process, the reverse transformation is also deterministic and therefore given 
+a parse tree in CNF grammar, there can only be 1 tree after the reverse CNF process and therefore
+there is no need to recalculate the derivation scores.
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[Agenda Pruning]
+\Answer
+\begin{enumerate}
+\item{}
+No. Agenda pruning depends on the heuristic used, and since heuristics cannot guarantee
+correctness, therefore it cannot guarantee to produce a parse if it exists. 
+\item{}
+Yes. Because the value of agenda items are calculated in a bottom-up manner items retain their 
+values as if none of their children were pruned (for a rule to be instantiated both children 
+have to be present) therefore any score calculated would be correct.
+\item{}
+SENT 0 AGENDA ADDS: 387 \\
+SENT 0 GOAL SCORE: None \\
+SENT 1 AGENDA ADDS: 31 \\
+SENT 1 GOAL SCORE: 2.28006028891e-06 \\
+SENT 2 AGENDA ADDS: 150 \\
+SENT 2 GOAL SCORE: None \\
+SENT 3 AGENDA ADDS: 63 \\
+SENT 3 GOAL SCORE: None \\
+SENT 4 AGENDA ADDS: 253 \\
+SENT 4 GOAL SCORE: None \\
+SENT 5 AGENDA ADDS: 179 \\
+SENT 5 GOAL SCORE: None \\
+SENT 6 AGENDA ADDS: 54 \\
+SENT 6 GOAL SCORE: 5.73824670126e-09 \\
+SENT 7 AGENDA ADDS: 49 \\
+SENT 7 GOAL SCORE: 1.25924395682e-08 \\
+SENT 8 AGENDA ADDS: 100 \\
+SENT 8 GOAL SCORE: None \\
+SENT 9 AGENDA ADDS: 251 \\
+SENT 9 GOAL SCORE: None \\
+SENT 10 AGENDA ADDS: 318 \\
+SENT 10 GOAL SCORE: None \\
+No I did not produce parses for all sentences. No the final scores are not identical to the true
+scores. Pruning with a constant threshold is not a good idea as scores tend to decrease higher
+up the parse tree as more rule weights are multiplied together and since for this case the scores
+are probabilities, the score value would become very small near the root. A constant threshold 
+would not take into account the changing values and remove agenda items in a long sentence.
+\item{}
+SENT 0 AGENDA ADDS: 456 \\
+SENT 0 GOAL SCORE: 3.06412448871e-41 \\
+SENT 1 AGENDA ADDS: 31 \\
+SENT 1 GOAL SCORE: 2.28006028891e-06 \\
+SENT 2 AGENDA ADDS: 185 \\
+SENT 2 GOAL SCORE: 1.46131493773e-19 \\
+SENT 3 AGENDA ADDS: 64 \\
+SENT 3 GOAL SCORE: 4.52096543091e-13 \\
+SENT 4 AGENDA ADDS: 345 \\
+SENT 4 GOAL SCORE: 3.77079612505e-27 \\
+SENT 5 AGENDA ADDS: 198 \\
+SENT 5 GOAL SCORE: 2.20933417212e-15 \\
+SENT 6 AGENDA ADDS: 54 \\
+SENT 6 GOAL SCORE: 5.73824670126e-09 \\
+SENT 7 AGENDA ADDS: 49 \\
+SENT 7 GOAL SCORE: 1.25924395682e-08 \\
+SENT 8 AGENDA ADDS: 105 \\
+SENT 8 GOAL SCORE: 8.33570429924e-14 \\
+SENT 9 AGENDA ADDS: 330 \\
+SENT 9 GOAL SCORE: 2.21661096379e-22 \\
+SENT 10 AGENDA ADDS: 386 \\
+SENT 10 GOAL SCORE: 3.85139619145e-36 \\
+Yes parses were produced for all sentences. The final scores are identical to true scores without
+pruning. 
+\end{enumerate}
+\end{homeworkProblem}
+
+\Acknowledgement{}
+
+% End edit to here
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{spacing}
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

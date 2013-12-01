@@ -1,0 +1,442 @@
+SENT 0 AGENDA ADDS: 560
+SENT 0 RULE: [.] -> . 
+SENT 0 RULE: [X52] -> [VP] [.] 
+SENT 0 RULE: [NN] -> role 
+SENT 0 RULE: [NP] -> [NNP] 
+SENT 0 RULE: [NN] -> Leisure 
+SENT 0 RULE: [X50] -> [,] [X51] 
+SENT 0 RULE: [X5] -> [,] [X6] 
+SENT 0 RULE: [X43] -> [S-HLN] [X44] 
+SENT 0 RULE: [NP] -> [NP] [X37] 
+SENT 0 RULE: [NN] -> review 
+SENT 0 RULE: [PP-CLR] -> [TO] [NP] 
+SENT 0 RULE: [NNS] -> Classics 
+SENT 0 RULE: [X64] -> [NP] [PP-LOC] 
+SENT 0 RULE: [,] -> , 
+SENT 0 RULE: [VBN] -> played 
+SENT 0 RULE: [IN] -> In 
+SENT 0 RULE: [X24] -> [CD] [NN] 
+SENT 0 RULE: [CD] -> 19 
+SENT 0 RULE: [NNP] -> Chicago 
+SENT 0 RULE: [POS] -> 's 
+SENT 0 RULE: [DT] -> the 
+SENT 0 RULE: [``] -> `` 
+SENT 0 RULE: [RB] -> mistakenly 
+SENT 0 RULE: [X37] -> [PP] [PRN] 
+SENT 0 RULE: [NNP] -> Celimene 
+SENT 0 RULE: [DT] -> The 
+SENT 0 RULE: [DT] -> an 
+SENT 0 RULE: [X38] -> [NP-TTL] [X39] 
+SENT 0 RULE: [NP-SBJ-2] -> [NP] [X5] 
+SENT 0 RULE: [X39] -> [''] [PP-LOC] 
+SENT 0 RULE: [X51] -> [NP-SBJ-2] [X52] 
+SENT 0 RULE: [X23] -> [NNP] [X24] 
+SENT 0 RULE: [VBD] -> was 
+SENT 0 RULE: [VP] -> [VBP] [X64] 
+SENT 0 RULE: [VBP] -> Take 
+SENT 0 RULE: [NP] -> [NNP] [NNP] 
+SENT 0 RULE: [IN] -> of 
+SENT 0 RULE: [IN] -> by 
+SENT 0 RULE: [NNP] -> Theatre 
+SENT 0 RULE: [NNP] -> Haag 
+SENT 0 RULE: [VBN] -> attributed 
+SENT 0 RULE: [NP-TTL] -> [DT] [NN] 
+SENT 0 RULE: [X44] -> [,] [X45] 
+SENT 0 RULE: [NP] -> [NNP] [POS] 
+SENT 0 RULE: [X45] -> [''] [X46] 
+SENT 0 RULE: [NP] -> [DT] [X23] 
+SENT 0 RULE: [PP] -> [IN] [NP-LGS] 
+SENT 0 RULE: [TO] -> to 
+SENT 0 RULE: [PP-LOC-CLR] -> [IN] [NP] 
+SENT 0 RULE: [S] -> [PP-LOC] [X50] 
+SENT 0 RULE: [NNP] -> City 
+SENT 0 RULE: [X21] -> [CC] [NNS] 
+SENT 0 RULE: [X42] -> [``] [X43] 
+SENT 0 RULE: [NP] -> [NP] [PP] 
+SENT 0 RULE: [NNP] -> Goodman 
+SENT 0 RULE: [IN] -> at 
+SENT 0 RULE: [VP] -> [VBN] [PP] 
+SENT 0 RULE: [NP] -> [DT] [NN] 
+SENT 0 RULE: [NNP] -> Christina 
+SENT 0 RULE: [NP] -> [NP] [X34] 
+SENT 0 RULE: [-LRB-] -> -LRB- 
+SENT 0 RULE: [NNP] -> Kim 
+SENT 0 RULE: [PRN] -> [-LRB-] [X42] 
+SENT 0 RULE: [VP] -> [ADVP-MNR] [X59] 
+SENT 0 RULE: [-RRB-] -> -RRB- 
+SENT 0 RULE: [NNS] -> Arts 
+SENT 0 RULE: [NNP] -> Oct. 
+SENT 0 RULE: [ADVP-MNR] -> [RB] 
+SENT 0 RULE: [NNP] -> Cattrall 
+SENT 0 RULE: [NP-LGS] -> [NNP] [NNP] 
+SENT 0 RULE: [CC] -> & 
+SENT 0 RULE: [PP] -> [IN] [NP] 
+SENT 0 RULE: [PP-LOC] -> [IN] [NP] 
+SENT 0 RULE: [X6] -> [VP] [,] 
+SENT 0 RULE: [NP-SBJ] -> [VBN] [NNS] 
+SENT 0 RULE: [VP] -> [VBD] [VP] 
+SENT 0 RULE: [IN] -> in 
+SENT 0 RULE: [NP-TMP] -> [NN] [X21] 
+SENT 0 RULE: [NN] -> Misanthrope 
+SENT 0 RULE: [S-HLN] -> [NP-SBJ] [VP] 
+SENT 0 RULE: [VP] -> [VBN] [PP-LOC-CLR] 
+SENT 0 RULE: [NP] -> [``] [X38] 
+SENT 0 RULE: [VBN] -> Revitalized 
+SENT 0 RULE: [''] -> '' 
+SENT 0 RULE: [X34] -> [NNP] [NNP] 
+SENT 0 RULE: [NNP] -> Windy 
+SENT 0 RULE: [X46] -> [NP-TMP] [-RRB-] 
+SENT 0 RULE: [NN] -> Stage 
+SENT 0 RULE: [X59] -> [VBN] [PP-CLR] 
+SENT 1 AGENDA ADDS: 31
+SENT 1 RULE: [.] -> . 
+SENT 1 RULE: [VBZ] -> plays 
+SENT 1 RULE: [NP] -> [NNP] 
+SENT 1 RULE: [NNP] -> Elianti 
+SENT 1 RULE: [S] -> [NP-SBJ] [X49] 
+SENT 1 RULE: [X49] -> [VP] [.] 
+SENT 1 RULE: [VP] -> [VBZ] [NP] 
+SENT 1 RULE: [NP-SBJ] -> [NNP] [NNP] 
+SENT 1 RULE: [NNP] -> Haag 
+SENT 1 RULE: [NNP] -> Ms. 
+SENT 2 AGENDA ADDS: 186
+SENT 2 RULE: [.] -> . 
+SENT 2 RULE: [NP-SBJ] -> [PRP$] [X20] 
+SENT 2 RULE: [TO] -> to 
+SENT 2 RULE: [CD] -> 1,200 
+SENT 2 RULE: [NNP] -> U.S. 
+SENT 2 RULE: [SBAR+S] -> [NP-SBJ] [VP] 
+SENT 2 RULE: [VBZ] -> expects 
+SENT 2 RULE: [X49] -> [VP] [.] 
+SENT 2 RULE: [X20] -> [NNP] [NNS] 
+SENT 2 RULE: [VP] -> [VB] [X68] 
+SENT 2 RULE: [NNPS] -> Cars 
+SENT 2 RULE: [IN] -> at 
+SENT 2 RULE: [X12] -> [NNP] [X13] 
+SENT 2 RULE: [VBD] -> said 
+SENT 2 RULE: [NNS] -> cars 
+SENT 2 RULE: [NP] -> [QP] [NNS] 
+SENT 2 RULE: [PRP$] -> its 
+SENT 2 RULE: [IN] -> about 
+SENT 2 RULE: [S] -> [NP-SBJ] [VP] 
+SENT 2 RULE: [NNP] -> Inc. 
+SENT 2 RULE: [CD] -> 1990 
+SENT 2 RULE: [X69] -> [PP-LOC-CLR] [PP-TMP] 
+SENT 2 RULE: [PRP] -> it 
+SENT 2 RULE: [NP-SBJ] -> [NNP] [X12] 
+SENT 2 RULE: [PP-LOC-CLR] -> [IN] [NP] 
+SENT 2 RULE: [NP] -> [CD] 
+SENT 2 RULE: [JJ] -> steady 
+SENT 2 RULE: [QP] -> [IN] [CD] 
+SENT 2 RULE: [X68] -> [ADJP-PRD] [X69] 
+SENT 2 RULE: [S] -> [NP-SBJ] [X49] 
+SENT 2 RULE: [PP-TMP] -> [IN] [NP] 
+SENT 2 RULE: [IN] -> in 
+SENT 2 RULE: [NNS] -> sales 
+SENT 2 RULE: [X13] -> [NNPS] [NNP] 
+SENT 2 RULE: [VB] -> remain 
+SENT 2 RULE: [NNP] -> Motor 
+SENT 2 RULE: [NNP] -> Rolls-Royce 
+SENT 2 RULE: [NP-SBJ] -> [PRP] 
+SENT 2 RULE: [ADJP-PRD] -> [JJ] 
+SENT 2 RULE: [VP] -> [VBD] [SBAR+S] 
+SENT 2 RULE: [VP] -> [VBZ] [S] 
+SENT 2 RULE: [VP] -> [TO] [VP] 
+SENT 3 AGENDA ADDS: 64
+SENT 3 RULE: [VP] -> [VBD] [X62] 
+SENT 3 RULE: [PP-LOC] -> [IN] [NP] 
+SENT 3 RULE: [NNP] -> U.S. 
+SENT 3 RULE: [NP-SBJ] -> [DT] [X10] 
+SENT 3 RULE: [DT] -> The 
+SENT 3 RULE: [IN] -> in 
+SENT 3 RULE: [S] -> [NP-SBJ] [X48] 
+SENT 3 RULE: [NN] -> auto 
+SENT 3 RULE: [JJ] -> last 
+SENT 3 RULE: [NP-TMP] -> [JJ] [NN] 
+SENT 3 RULE: [NNS] -> cars 
+SENT 3 RULE: [NN] -> luxury 
+SENT 3 RULE: [NP] -> [DT] [NNP] 
+SENT 3 RULE: [X11] -> [NN] [NN] 
+SENT 3 RULE: [DT] -> the 
+SENT 3 RULE: [VBD] -> sold 
+SENT 3 RULE: [NN] -> year 
+SENT 3 RULE: [NP] -> [CD] [NNS] 
+SENT 3 RULE: [X10] -> [NN] [X11] 
+SENT 3 RULE: [CD] -> 1,214 
+SENT 3 RULE: [NN] -> maker 
+SENT 3 RULE: [X62] -> [NP] [PP-LOC] 
+SENT 3 RULE: [X48] -> [NP-TMP] [VP] 
+SENT 4 AGENDA ADDS: 460
+SENT 4 RULE: [.] -> . 
+SENT 4 RULE: [NP] -> [NNP] 
+SENT 4 RULE: [NNS] -> markets 
+SENT 4 RULE: [SBAR+S] -> [NP-SBJ] [VP] 
+SENT 4 RULE: [CC] -> and 
+SENT 4 RULE: [VBZ] -> anticipates 
+SENT 4 RULE: [X27] -> [NN] [NN] 
+SENT 4 RULE: [X49] -> [VP] [.] 
+SENT 4 RULE: [NN] -> executive 
+SENT 4 RULE: [JJ] -> Far 
+SENT 4 RULE: [NN] -> auto 
+SENT 4 RULE: [X29] -> [NN] [NN] 
+SENT 4 RULE: [X26] -> [NN] [X27] 
+SENT 4 RULE: [VBD] -> said 
+SENT 4 RULE: [NNP] -> Mosher 
+SENT 4 RULE: [,] -> , 
+SENT 4 RULE: [NP-SBJ] -> [NP] [X15] 
+SENT 4 RULE: [DT] -> the 
+SENT 4 RULE: [X41] -> [CC] [PP] 
+SENT 4 RULE: [NP] -> [NNP] [X30] 
+SENT 4 RULE: [NP] -> [JJ] [X29] 
+SENT 4 RULE: [NNP] -> Howard 
+SENT 4 RULE: [NP] -> [ADJP] [NNS] 
+SENT 4 RULE: [X35] -> [PP] [PP-LOC] 
+SENT 4 RULE: [NP] -> [NP] [X33] 
+SENT 4 RULE: [NP-SBJ] -> [PRP] 
+SENT 4 RULE: [PP] -> [IN] [NP] 
+SENT 4 RULE: [NNP] -> Europe 
+SENT 4 RULE: [NN] -> growth 
+SENT 4 RULE: [S] -> [NP-SBJ] [X49] 
+SENT 4 RULE: [NP] -> [NP] [X35] 
+SENT 4 RULE: [IN] -> in 
+SENT 4 RULE: [ADJP] -> [JJ] [JJ] 
+SENT 4 RULE: [JJ] -> chief 
+SENT 4 RULE: [NN] -> luxury 
+SENT 4 RULE: [PP-LOC] -> [PP] [X40] 
+SENT 4 RULE: [IN] -> for 
+SENT 4 RULE: [X15] -> [,] [X16] 
+SENT 4 RULE: [NN] -> officer 
+SENT 4 RULE: [NP] -> [NN] 
+SENT 4 RULE: [X16] -> [NP] [,] 
+SENT 4 RULE: [NP] -> [NNP] [NNP] 
+SENT 4 RULE: [NN] -> president 
+SENT 4 RULE: [NP] -> [DT] [X26] 
+SENT 4 RULE: [PRP] -> he 
+SENT 4 RULE: [VP] -> [VBZ] [NP] 
+SENT 4 RULE: [X40] -> [,] [X41] 
+SENT 4 RULE: [NNP] -> Britain 
+SENT 4 RULE: [JJ] -> Eastern 
+SENT 4 RULE: [X30] -> [CC] [NNP] 
+SENT 4 RULE: [X33] -> [CC] [NP] 
+SENT 4 RULE: [VP] -> [VBD] [SBAR+S] 
+SENT 4 RULE: [NN] -> maker 
+SENT 5 AGENDA ADDS: 234
+SENT 5 RULE: [.] -> . 
+SENT 5 RULE: [PP-DIR] -> [IN] [NP] 
+SENT 5 RULE: [TO] -> to 
+SENT 5 RULE: [NP] -> [NP] [PP] 
+SENT 5 RULE: [X49] -> [VP] [.] 
+SENT 5 RULE: [CD] -> 10 
+SENT 5 RULE: [VP] -> [VBD] [X60] 
+SENT 5 RULE: [PP] -> [TO] [NP] 
+SENT 5 RULE: [PP-DIR] -> [TO] [NP] 
+SENT 5 RULE: [PRP$] -> its 
+SENT 5 RULE: [NN] -> quarterly 
+SENT 5 RULE: [NNP] -> Inc. 
+SENT 5 RULE: [NN] -> share 
+SENT 5 RULE: [VBD] -> increased 
+SENT 5 RULE: [NP] -> [CD] [NNS] 
+SENT 5 RULE: [NNP] -> BELL 
+SENT 5 RULE: [DT] -> a 
+SENT 5 RULE: [VP] -> [VBD] [X62] 
+SENT 5 RULE: [NNS] -> cents 
+SENT 5 RULE: [PP-LOC] -> [IN] [NP] 
+SENT 5 RULE: [NNP] -> INDUSTRIES 
+SENT 5 RULE: [S] -> [NP-SBJ] [X49] 
+SENT 5 RULE: [NP-SBJ] -> [NNP] [X14] 
+SENT 5 RULE: [X61] -> [PP-DIR] [PP-DIR] 
+SENT 5 RULE: [NP-ADV] -> [DT] [NN] 
+SENT 5 RULE: [IN] -> from 
+SENT 5 RULE: [NP] -> [PRP$] [NN] 
+SENT 5 RULE: [NP] -> [NP] [NP-ADV] 
+SENT 5 RULE: [CD] -> seven 
+SENT 5 RULE: [X60] -> [NP] [X61] 
+SENT 5 RULE: [X62] -> [NP] [PP-LOC] 
+SENT 5 RULE: [X14] -> [NNP] [NNP] 
+SENT 6 AGENDA ADDS: 54
+SENT 6 RULE: [.] -> . 
+SENT 6 RULE: [NP-SBJ] -> [DT] [X7] 
+SENT 6 RULE: [X7] -> [JJ] [NN] 
+SENT 6 RULE: [DT] -> The 
+SENT 6 RULE: [VP] -> [MD] [VP] 
+SENT 6 RULE: [S] -> [NP-SBJ] [X49] 
+SENT 6 RULE: [X49] -> [VP] [.] 
+SENT 6 RULE: [JJ] -> payable 
+SENT 6 RULE: [MD] -> will 
+SENT 6 RULE: [VP] -> [VB] [ADJP-PRD] 
+SENT 6 RULE: [VB] -> be 
+SENT 6 RULE: [CD] -> 15 
+SENT 6 RULE: [ADJP-PRD] -> [JJ] [NP-TMP] 
+SENT 6 RULE: [JJ] -> new 
+SENT 6 RULE: [NP-TMP] -> [NNP] [CD] 
+SENT 6 RULE: [NN] -> rate 
+SENT 6 RULE: [NNP] -> Feb. 
+SENT 7 AGENDA ADDS: 49
+SENT 7 RULE: [.] -> . 
+SENT 7 RULE: [VP] -> [VBN] 
+SENT 7 RULE: [NN] -> date 
+SENT 7 RULE: [VP] -> [VBZ] [X67] 
+SENT 7 RULE: [S] -> [NP-SBJ-1] [X47] 
+SENT 7 RULE: [VBN] -> been 
+SENT 7 RULE: [X4] -> [NN] [NN] 
+SENT 7 RULE: [X67] -> [RB] [VP] 
+SENT 7 RULE: [DT] -> A 
+SENT 7 RULE: [VP] -> [VBN] [VP] 
+SENT 7 RULE: [VBZ] -> has 
+SENT 7 RULE: [X47] -> [VP] [.] 
+SENT 7 RULE: [RB] -> n't 
+SENT 7 RULE: [NN] -> record 
+SENT 7 RULE: [NP-SBJ-1] -> [DT] [X4] 
+SENT 7 RULE: [VBN] -> set 
+SENT 8 AGENDA ADDS: 120
+SENT 8 RULE: [.] -> . 
+SENT 8 RULE: [PP] -> [IN] [NP-LGS] 
+SENT 8 RULE: [NP] -> [NNP] 
+SENT 8 RULE: [X58] -> [CC] [NN] 
+SENT 8 RULE: [UCP] -> [JJ] [X56] 
+SENT 8 RULE: [X49] -> [VP] [.] 
+SENT 8 RULE: [NP] -> [UCP] [NNS] 
+SENT 8 RULE: [X57] -> [NN] [X58] 
+SENT 8 RULE: [NN] -> building 
+SENT 8 RULE: [JJ] -> electronic 
+SENT 8 RULE: [NNP] -> Angeles 
+SENT 8 RULE: [NNP] -> Bell 
+SENT 8 RULE: [X18] -> [VP] [,] 
+SENT 8 RULE: [VP] -> [VBN] [PP] 
+SENT 8 RULE: [,] -> , 
+SENT 8 RULE: [VBN] -> based 
+SENT 8 RULE: [NP-SBJ] -> [NP] [X17] 
+SENT 8 RULE: [NNS] -> products 
+SENT 8 RULE: [NNP] -> Los 
+SENT 8 RULE: [X56] -> [,] [X57] 
+SENT 8 RULE: [PP-LOC-CLR] -> [IN] [NP] 
+SENT 8 RULE: [NP-LGS] -> [NNP] [NNP] 
+SENT 8 RULE: [X66] -> [VBZ] [NP] 
+SENT 8 RULE: [PP] -> [IN] [NP] 
+SENT 8 RULE: [NN] -> computer 
+SENT 8 RULE: [S] -> [NP-SBJ] [X49] 
+SENT 8 RULE: [X17] -> [,] [X18] 
+SENT 8 RULE: [IN] -> in 
+SENT 8 RULE: [CC] -> and 
+SENT 8 RULE: [VBZ] -> distributes 
+SENT 8 RULE: [X65] -> [CC] [X66] 
+SENT 8 RULE: [VP] -> [VBN] [PP-LOC-CLR] 
+SENT 8 RULE: [VP] -> [VBZ] [X65] 
+SENT 8 RULE: [NP] -> [NNP] [NNP] 
+SENT 8 RULE: [VBZ] -> makes 
+SENT 9 AGENDA ADDS: 454
+SENT 9 RULE: [.] -> . 
+SENT 9 RULE: [CC] -> and 
+SENT 9 RULE: [X49] -> [VP] [.] 
+SENT 9 RULE: [NNPS] -> Securities 
+SENT 9 RULE: [X63] -> [PP-CLR] [S-CLR] 
+SENT 9 RULE: [PRP$] -> their 
+SENT 9 RULE: [IN] -> about 
+SENT 9 RULE: [NP] -> [NP] [X36] 
+SENT 9 RULE: [VB] -> limit 
+SENT 9 RULE: [NP] -> [JJ] [NNS] 
+SENT 9 RULE: [X35] -> [PP] [PP-LOC] 
+SENT 9 RULE: [NP] -> [NN] [X31] 
+SENT 9 RULE: [NNS] -> Investors 
+SENT 9 RULE: [S] -> [NP-SBJ] [X49] 
+SENT 9 RULE: [NP] -> [NP] [X35] 
+SENT 9 RULE: [NNS] -> insiders 
+SENT 9 RULE: [NNS] -> sales 
+SENT 9 RULE: [NNP] -> Exchange 
+SENT 9 RULE: [NP-SBJ] -> [NNS] 
+SENT 9 RULE: [NP] -> [PRP$] [NN] 
+SENT 9 RULE: [NN] -> information 
+SENT 9 RULE: [VBG] -> appealing 
+SENT 9 RULE: [IN] -> by 
+SENT 9 RULE: [PP-CLR] -> [TO] [NP-1] 
+SENT 9 RULE: [TO] -> to 
+SENT 9 RULE: [X2] -> [CC] [X3] 
+SENT 9 RULE: [X36] -> [PP] [PP] 
+SENT 9 RULE: [NP] -> [NP] [PP] 
+SENT 9 RULE: [NN] -> access 
+SENT 9 RULE: [RB] -> not 
+SENT 9 RULE: [X1] -> [NNPS] [X2] 
+SENT 9 RULE: [X3] -> [NNP] [NNP] 
+SENT 9 RULE: [VP] -> [VBG] [X63] 
+SENT 9 RULE: [DT] -> the 
+SENT 9 RULE: [VP] -> [VB] [NP] 
+SENT 9 RULE: [VP] -> [VBP] [VP] 
+SENT 9 RULE: [NNP] -> Commission 
+SENT 9 RULE: [NP-1] -> [DT] [X1] 
+SENT 9 RULE: [PP] -> [IN] [NP] 
+SENT 9 RULE: [PP-LOC] -> [IN] [NP] 
+SENT 9 RULE: [NNS] -> purchases 
+SENT 9 RULE: [X32] -> [CC] [NNS] 
+SENT 9 RULE: [PP] -> [TO] [NP] 
+SENT 9 RULE: [VBP] -> are 
+SENT 9 RULE: [NP] -> [NN] 
+SENT 9 RULE: [X31] -> [NNS] [X32] 
+SENT 9 RULE: [VP] -> [TO] [VP] 
+SENT 9 RULE: [NN] -> stock 
+SENT 9 RULE: [JJ] -> corporate 
+SENT 9 RULE: [S-CLR] -> [RB] [VP] 
+SENT 10 AGENDA ADDS: 465
+SENT 10 RULE: [.] -> . 
+SENT 10 RULE: [NN] -> usefulness 
+SENT 10 RULE: [X53] -> [,] [X54] 
+SENT 10 RULE: [NNS] -> trades 
+SENT 10 RULE: [X22] -> [JJ] [NN] 
+SENT 10 RULE: [CC] -> and 
+SENT 10 RULE: [JJ] -> individual 
+SENT 10 RULE: [VP] -> [VBP] 
+SENT 10 RULE: [MD] -> would 
+SENT 10 RULE: [JJ] -> professional 
+SENT 10 RULE: [NNS] -> managers 
+SENT 10 RULE: [NP] -> [NP] [X36] 
+SENT 10 RULE: [NP] -> [JJ] [X28] 
+SENT 10 RULE: [NP] -> [JJ] [NNS] 
+SENT 10 RULE: [X25] -> [NN] [NNS] 
+SENT 10 RULE: [NNS] -> requirements 
+SENT 10 RULE: [X8] -> [NNP] [X9] 
+SENT 10 RULE: [X28] -> [NN] [NNS] 
+SENT 10 RULE: [NP] -> [DT] [X22] 
+SENT 10 RULE: [S-TPC-1] -> [NP-SBJ] [VP] 
+SENT 10 RULE: [X9] -> [NN] [S+VP] 
+SENT 10 RULE: [,] -> , 
+SENT 10 RULE: [NP] -> [NP] [X35] 
+SENT 10 RULE: [NN] -> tool 
+SENT 10 RULE: [NN] -> insider 
+SENT 10 RULE: [NN] -> money 
+SENT 10 RULE: [DT] -> A 
+SENT 10 RULE: [NP] -> [DT] [X25] 
+SENT 10 RULE: [NN] -> information 
+SENT 10 RULE: [NP] -> [NN] [NNS] 
+SENT 10 RULE: [VBP] -> contend 
+SENT 10 RULE: [NN] -> proposal 
+SENT 10 RULE: [NNS] -> investors 
+SENT 10 RULE: [VB] -> ease 
+SENT 10 RULE: [IN] -> of 
+SENT 10 RULE: [DT] -> some 
+SENT 10 RULE: [X35] -> [PP] [PP-LOC] 
+SENT 10 RULE: [TO] -> to 
+SENT 10 RULE: [NNP] -> SEC 
+SENT 10 RULE: [X36] -> [PP] [PP] 
+SENT 10 RULE: [NP] -> [NP] [PP] 
+SENT 10 RULE: [S+VP] -> [TO] [VP] 
+SENT 10 RULE: [X55] -> [VP] [.] 
+SENT 10 RULE: [NP] -> [DT] [NN] 
+SENT 10 RULE: [VB] -> undermine 
+SENT 10 RULE: [X54] -> [NP-SBJ] [X55] 
+SENT 10 RULE: [NNS] -> executives 
+SENT 10 RULE: [DT] -> the 
+SENT 10 RULE: [VP] -> [VB] [NP] 
+SENT 10 RULE: [JJ] -> stock-picking 
+SENT 10 RULE: [NN] -> company 
+SENT 10 RULE: [DT] -> a 
+SENT 10 RULE: [S] -> [S-TPC-1] [X53] 
+SENT 10 RULE: [PP] -> [IN] [NP] 
+SENT 10 RULE: [PP-LOC] -> [IN] [NP] 
+SENT 10 RULE: [VP] -> [MD] [VP] 
+SENT 10 RULE: [NN] -> reporting 
+SENT 10 RULE: [NP-SBJ] -> [NP] [X19] 
+SENT 10 RULE: [IN] -> for 
+SENT 10 RULE: [NP] -> [NN] 
+SENT 10 RULE: [X19] -> [CC] [NP] 
+SENT 10 RULE: [IN] -> on 
+SENT 10 RULE: [IN] -> as 
+SENT 10 RULE: [NP-SBJ] -> [DT] [X8] 
